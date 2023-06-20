@@ -1,0 +1,42 @@
+<h1 class="text-center" style="padding: top 50px,bottom 50px; margin-top: 90px;">ProductList</h1>      
+<div class="container">     
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Product Id</th>
+          <th>Product Name</th>
+          <th>About</th>
+          <th>Product Price</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <tr *ngFor="let product of productlist">
+          <td>{{product.id}}</td>
+          <td>{{product.name}}</td>
+          <td>{{product.about}}</td>
+          <td>{{product.price}}</td>
+          <td><button type="button" class="btn btn-primary" (click)="goToEditProduct(product.id)" >Edit</button>&nbsp;&nbsp;
+
+            <!-- <button type="button" class="btn btn-info" (click)="goToViewProduct(product.id)">View</button>&nbsp;&nbsp; -->
+            <button type="button" class="btn btn-danger" (click)="goToDeleteProduct(product.id)">Delete</button>&nbsp;&nbsp;
+          </td>
+        </tr>
+        <!-- <tr>
+          <td>1</td>
+          <td>t</td>
+          <td>t4</td>
+          <td>99</td>
+          <td><button type="button" class="btn btn-primary" (click)="goToEditProduct" >Edit</button>&nbsp;&nbsp;
+
+            <button type="button" class="btn btn-info">View</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-danger">Delete</button>&nbsp;&nbsp;
+          </td>
+        </tr> -->
+      </tbody>
+    </table>
+
+    <button type="button" class="btn btn-success" (click)="goToAddProduct()">Add New Product</button>
+  </div>
+  

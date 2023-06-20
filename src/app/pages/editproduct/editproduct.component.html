@@ -1,0 +1,111 @@
+<!-- 
+  <div class="container">
+      <div class="row" style="margin-top: 27px;">
+          <div class="col-md-6 offset-md-3">
+
+            <mat-card>
+              
+              <div class="container test-center">
+  
+                  <img src="../../../assets/logo.png " style="height: 90px;" alt=""/>
+              </div>
+              <h1 class="test-center">Update Product!!</h1>
+              Data Interpolation
+              {{user |json}} 
+              <form  #addproductform="ngForm" (ngSubmit)="updateproductformsubmit()">
+                  Username Field 
+                  <mat-form-field  class="form-field" appearance="outline">
+                      <mat-label>Product Id</mat-label>
+                      <input type="text"
+                      [(ngModel)]="product.id"
+                      name="username"
+                      matInput placeholder="Enter Username" required>
+                      <mat-hint>Username must be unique !!</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field  class="form-field" appearance="outline">
+                      <mat-label>Password</mat-label>
+                      <input
+                      [(ngModel)]="product.name"
+                      name="name" 
+                      type="text" matInput placeholder=" Enter Password" required>
+                    </mat-form-field>
+
+                    <mat-form-field  class="form-field" appearance="outline">
+                      <mat-label>Firstname</mat-label>
+                      <input  type="text"
+                      [(ngModel)]="product.about"
+                      name="about"
+                      matInput placeholder=" Enter Firstname" required>
+                    </mat-form-field>
+
+                    <mat-form-field  class="form-field" appearance="outline">
+                      <mat-label>Lastname</mat-label>
+                      <input  type="text"
+                      [(ngModel)]="product.price"
+                      name="price"
+                      matInput placeholder=" Enter Lastname" required>
+                    </mat-form-field>
+
+                    <div class="container test-center">
+                      <button type="submit" color="primary" mat-raised-button>Update</button>
+                      <button type="reset" color="accent" style="margin-left: 27px;" mat-raised-button>Clear</button>
+                      <button type="button" class="btn btn-primary" (click)="gotolist()">Back</button>&nbsp;&nbsp;
+                    </div>
+
+              </form>
+            </mat-card>
+          </div>
+      </div>
+  </div> -->
+
+
+  <div class="container">
+    <h1 class="test-center">Update Product!!</h1>
+    <!--Data Interpolation-->
+    
+    <form #addproductform="ngForm" (ngSubmit)="updateproductformsubmit()">
+        
+        {{product |json}}
+        <div class="form-group">
+            <label>Product Id</label>
+            <input type="text" class="form-control"
+            [(ngModel)]="product.id"
+            name="id"
+             placeholder="Enter Product Id" required>
+        </div>
+
+          <div  class="form-group">
+            <label>Product Name</label>
+            <input
+            [(ngModel)]="product.name"
+            name="name" class="form-control"
+            type="text" placeholder="Product Name" required>
+          </div>
+
+          <div class="form-field" >
+            <label>About Product</label>
+            <input  type="text" class="form-control"
+            [(ngModel)]="product.about"
+            name="about"
+            placeholder="About Product" required>
+          </div>
+        
+
+          <div class="form-group">
+            <label>Enter Price for Product</label>
+            <input  type="text" class="form-control"
+            [(ngModel)]="product.price"
+            name="price"
+            placeholder=" Enter Price for Product" required>
+          </div>
+
+          <div class="container test-center">
+            <button type="submit" class="btn btn-success">Update</button>&nbsp;&nbsp;
+            <button type="reset" class="btn btn-danger" >Clear</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-primary" (click)="gotolist()">Back&nbsp;&nbsp;
+            </button>
+          </div>
+
+</form>
+</div>
